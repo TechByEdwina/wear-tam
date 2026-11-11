@@ -274,6 +274,8 @@ function initAuthModal() {
 
     try {
       await signUp(fullName, email, password)
+      // Store email for resend button before resetting form
+      signupForm.dataset.lastEmail = email
       // Show full confirmation panel instead of inline banner
       showPanel('confirm')
       signupForm.reset()
@@ -305,9 +307,10 @@ function initAuthModal() {
 
   // Resend confirmation email
   document.getElementById('resendConfirm')?.addEventListener('click', async () => {
-    const email = document.getElementById('signupEmail')?.value?.trim()
+    // Use stored email from signup, not the cleared form field
+    const email = signupForm?.dataset?.lastEmail || document.getElementById('signupEmail')?.value?.trim()
     if (!email) {
-      showAuthError('resendMsg', 'Please go back and enter your email first.', 'error')
+      showAuthError('resendMsg', 'Please go back and sign up again.', 'error')
       return
     }
     try {
