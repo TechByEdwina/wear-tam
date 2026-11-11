@@ -808,6 +808,21 @@ const cart = {
   // Parallax disabled — hero uses video background
 })();
 
+/* ─── LAZY LOAD HERO VIDEO ───────────────────────────── */
+(function initLazyVideo() {
+  const video = document.getElementById('heroVideo')
+  if (!video) return
+
+  window.addEventListener('load', () => {
+    const source = video.querySelector('source[data-src]')
+    if (source) {
+      source.src = source.dataset.src
+      video.load()
+      video.play().catch(() => {})
+    }
+  })
+})()
+
 /* ─── TOAST HELPER ───────────────────────────────────── */
 function showToast(message, duration = 3000) {
   const toast = document.getElementById('toast');
