@@ -1,0 +1,964 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="wear.TAM | The Alisa Musa. Put together every day. Premium fashion pieces designed for the modern woman." />
+  <title>wear.TAM | The Alisa Musa</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       CUSTOM CURSOR
+  ============================================================ -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- ============================================================
+       LOADER
+  ============================================================ -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <span class="loader-script">wear.</span><span class="loader-bold">TAM</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <!-- Logo -->
+      <a href="#home" class="nav-logo">
+        <span class="logo-script">wear.</span><span class="logo-bold">TAM</span>
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#collection" class="nav-link">Collection</a></li>
+        <li><a href="#story" class="nav-link">Our Story</a></li>
+        <li><a href="#lookbook" class="nav-link">Lookbook</a></li>
+        <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Nav actions -->
+      <div class="nav-actions">
+        <button class="nav-icon auth-nav-btn" id="authNavBtn" data-state="signed-out" aria-label="Account" title="Log In">
+          <i class="fas fa-circle-user"></i>
+          <span class="auth-nav-label" id="authNavLabel">Log In</span>
+        </button>
+        <button class="nav-icon cart-btn" id="cartBtn" aria-label="Cart">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#collection" class="mobile-link">Collection</a></li>
+        <li><a href="#story" class="mobile-link">Our Story</a></li>
+        <li><a href="#lookbook" class="mobile-link">Lookbook</a></li>
+        <li><a href="#testimonials" class="mobile-link">Reviews</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+      </ul>
+      <div class="mobile-socials">
+        <a href="https://www.instagram.com/wear.tam" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO SECTION
+  ============================================================ -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto">
+        <source src="assets/images/Tam-Main-Hero-Video.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal-up">New Collection · 2026</p>
+      <h1 class="hero-headline reveal-up">
+        Dress the<br/>
+        <em>story</em> you<br/>
+        want to tell.
+      </h1>
+      <p class="hero-sub reveal-up">Effortless pieces for the woman who moves with intention.</p>
+      <div class="hero-actions reveal-up">
+        <a href="#collection" class="btn btn-primary">Shop the Collection</a>
+        <a href="#story" class="btn btn-ghost">Our Story</a>
+      </div>
+    </div>
+
+    <div class="hero-tagline">
+      <span>PUT TOGETHER EVERY DAY</span>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MARQUEE TICKER
+  ============================================================ -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>wear.TAM</span>
+      <span class="marquee-dot">·</span>
+      <span>The Alisa Musa</span>
+      <span class="marquee-dot">·</span>
+      <span>Put Together Every Day</span>
+      <span class="marquee-dot">·</span>
+      <span>New Collection 2026</span>
+      <span class="marquee-dot">·</span>
+      <span>wear.TAM</span>
+      <span class="marquee-dot">·</span>
+      <span>The Alisa Musa</span>
+      <span class="marquee-dot">·</span>
+      <span>Put Together Every Day</span>
+      <span class="marquee-dot">·</span>
+      <span>New Collection 2026</span>
+      <span class="marquee-dot">·</span>
+      <span>wear.TAM</span>
+      <span class="marquee-dot">·</span>
+      <span>The Alisa Musa</span>
+      <span class="marquee-dot">·</span>
+      <span>Put Together Every Day</span>
+      <span class="marquee-dot">·</span>
+      <span>New Collection 2026</span>
+      <span class="marquee-dot">·</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       COLLECTION SECTION
+  ============================================================ -->
+  <section class="collection" id="collection">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-eyebrow">The Collection</p>
+        <h2 class="section-title">Curated for <em>You</em></h2>
+        <p class="section-sub">Each piece is crafted with intention, for the woman who shows up fully, every day.</p>
+      </div>
+
+      <!-- Filter tabs -->
+      <div class="filter-tabs reveal-up">
+        <button class="filter-tab active" data-filter="all">Alpha Collection</button>
+      </div>
+      <p class="collection-tagline reveal-up">The first expression.</p>
+
+      <!-- Products grid -->
+      <div class="products-grid" id="productsGrid">
+
+        <div class="product-card reveal-up" data-category="sets">
+          <div class="product-img-wrap">
+            <div class="product-img product-img-1"></div>
+            <div class="product-img product-img-hover product-img-1h"></div>
+            <div class="product-badges">
+              <span class="badge badge-bestseller">Bestseller</span>
+            </div>
+            <button class="quick-add" data-id="1" data-name="Becca Denim Set" data-price="72,500">Quick Add</button>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Becca Denim Set</h3>
+            <p class="product-desc">Alpha Collection</p>
+            <div class="product-footer">
+              <span class="product-price">&#x20A6;72,500</span>
+              <button class="product-view-btn" data-id="1">View</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal-up" data-category="dresses">
+          <div class="product-img-wrap">
+            <div class="product-img product-img-2"></div>
+            <div class="product-img product-img-hover product-img-2h"></div>
+            <div class="product-badges">
+              <span class="badge badge-new">New</span>
+            </div>
+            <button class="quick-add" data-id="2" data-name="Lily Set" data-price="49,000">Quick Add</button>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Lily Set</h3>
+            <p class="product-desc">Alpha Collection</p>
+            <div class="product-footer">
+              <span class="product-price">&#x20A6;49,000</span>
+              <button class="product-view-btn" data-id="2">View</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal-up" data-category="sets">
+          <div class="product-img-wrap">
+            <div class="product-img product-img-3"></div>
+            <div class="product-img product-img-hover product-img-3h"></div>
+            <div class="product-badges">
+              <span class="badge badge-new">New</span>
+            </div>
+            <button class="quick-add" data-id="3" data-name="The Cherry Dress" data-price="38,000">Quick Add</button>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">The Cherry Dress</h3>
+            <p class="product-desc">Alpha Collection</p>
+            <div class="product-footer">
+              <span class="product-price">&#x20A6;38,000</span>
+              <button class="product-view-btn" data-id="3">View</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal-up" data-category="dresses">
+          <div class="product-img-wrap">
+            <div class="product-img product-img-4"></div>
+            <div class="product-img product-img-hover product-img-4h"></div>
+            <button class="quick-add" data-id="4" data-name="Kayla Suit Set - Skirt" data-price="70,000">Quick Add</button>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Kayla Suit Set - Skirt</h3>
+            <p class="product-desc">Alpha Collection</p>
+            <div class="product-footer">
+              <span class="product-price">&#x20A6;70,000</span>
+              <button class="product-view-btn" data-id="4">View</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal-up" data-category="sets">
+          <div class="product-img-wrap">
+            <div class="product-img product-img-5"></div>
+            <div class="product-img product-img-hover product-img-5h"></div>
+            <div class="product-badges">
+              <span class="badge badge-new">New</span>
+            </div>
+            <button class="quick-add" data-id="5" data-name="Kayla Suit Set - Pants" data-price="69,000">Quick Add</button>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Kayla Suit Set - Pants</h3>
+            <p class="product-desc">Alpha Collection</p>
+            <div class="product-footer">
+              <span class="product-price">&#x20A6;69,000</span>
+              <button class="product-view-btn" data-id="5">View</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card reveal-up" data-category="dresses">
+          <div class="product-img-wrap">
+            <div class="product-img product-img-6"></div>
+            <div class="product-img product-img-hover product-img-6h"></div>
+            <div class="product-badges">
+              <span class="badge badge-new">New</span>
+            </div>
+            <button class="quick-add" data-id="6" data-name="Lily Set - Black" data-price="49,000">Quick Add</button>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Lily Set - Black</h3>
+            <p class="product-desc">Alpha Collection</p>
+            <div class="product-footer">
+              <span class="product-price">&#x20A6;49,000</span>
+              <button class="product-view-btn" data-id="6">View</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BRAND STORY SECTION
+  ============================================================ -->
+  <section class="story" id="story">
+    <div class="story-inner">
+      <div class="story-visual reveal-left">
+        <div class="story-img-main"></div>
+        <div class="story-img-accent">
+          <span class="story-accent-text">EST. 2024</span>
+        </div>
+        <div class="story-stat">
+          <strong>100+</strong>
+          <span>Women Dressed</span>
+        </div>
+      </div>
+      <div class="story-content reveal-right">
+        <p class="section-eyebrow">Our Story</p>
+        <h2 class="section-title">Built for the<br/><em>woman who knows.</em></h2>
+        <p class="story-text">
+          TAM was born from a simple belief: every woman deserves to feel put together, not just on special occasions, but every single day.
+        </p>
+        <p class="story-text">
+          We design pieces that work as hard as you do. Silhouettes that hold their shape. Fabrics that feel like a second skin. Colours that make you stop and look twice.
+        </p>
+        <p class="story-text">
+          This isn't fast fashion. This is your wardrobe, built to last.
+        </p>
+        <div class="story-values">
+          <div class="value-item">
+            <i class="fas fa-gem"></i>
+            <span>Quality First</span>
+          </div>
+          <div class="value-item">
+            <i class="fas fa-heart"></i>
+            <span>Made with You in Mind</span>
+          </div>
+          <div class="value-item">
+            <i class="fas fa-leaf"></i>
+            <span>Intentional Design</span>
+          </div>
+        </div>
+        <a href="#collection" class="btn btn-primary">Shop the Collection</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FEATURE STRIP
+  ============================================================ -->
+  <section class="features-strip">
+    <div class="features-inner">
+      <div class="feature-item reveal-up">
+        <i class="fas fa-truck-fast"></i>
+        <div>
+          <strong>Fast Delivery</strong>
+          <span>Abuja & nationwide shipping</span>
+        </div>
+      </div>
+      <div class="feature-divider"></div>
+      <div class="feature-item reveal-up">
+        <i class="fas fa-rotate-left"></i>
+        <div>
+          <strong>Easy Returns</strong>
+          <span>7-day return policy</span>
+        </div>
+      </div>
+      <div class="feature-divider"></div>
+      <div class="feature-item reveal-up">
+        <i class="fas fa-lock"></i>
+        <div>
+          <strong>Secure Payment</strong>
+          <span>Powered by Paystack</span>
+        </div>
+      </div>
+      <div class="feature-divider"></div>
+      <div class="feature-item reveal-up">
+        <i class="fas fa-ruler"></i>
+        <div>
+          <strong>Size Inclusive</strong>
+          <span>UK 6 to 20 available</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       LOOKBOOK
+  ============================================================ -->
+  <section class="lookbook" id="lookbook">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-eyebrow">Lookbook</p>
+        <h2 class="section-title">The <em>TAM</em> Aesthetic</h2>
+      </div>
+    </div>
+    <div class="lookbook-strip">
+      <div class="lookbook-track">
+        <div class="lookbook-card lb-3">
+          <div class="lb-overlay"><span>Lily Set</span></div>
+        </div>
+        <div class="lookbook-card lb-4">
+          <div class="lb-overlay"><span>The Cherry Dress</span></div>
+        </div>
+        <div class="lookbook-card lb-5">
+          <div class="lb-overlay"><span>Kayla Suit Set - Skirt</span></div>
+        </div>
+        <div class="lookbook-card lb-6">
+          <div class="lb-overlay"><span>Becca Denim Set</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WALL OF LOVE
+  ============================================================ -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-eyebrow">Reviews</p>
+        <h2 class="section-title wall-title">Wall of <em>Love</em> 🤍</h2>
+        <p class="section-sub" style="color: rgba(245,245,240,0.5);">Real words from real women wearing TAM.</p>
+      </div>
+    </div>
+
+    <!-- Row 1 — scrolls left -->
+    <div class="love-row">
+      <div class="love-track love-track-left">
+        <div class="love-card"><span class="love-quote">"</span>You see that second outfit, just wow 🔥🔥🔥 😍</div>
+        <div class="love-card"><span class="love-quote">"</span>The whole collection!!!!</div>
+        <div class="love-card"><span class="love-quote">"</span>That denimmm 😮‍💨🫰</div>
+        <div class="love-card"><span class="love-quote">"</span>Every single piece is 🔥🔥❤️</div>
+        <div class="love-card"><span class="love-quote">"</span>All 🔥🔥</div>
+        <div class="love-card"><span class="love-quote">"</span>Love ittt 😍😍😍</div>
+        <div class="love-card"><span class="love-quote">"</span>You see that second outfit, just wow 🔥🔥🔥 😍</div>
+        <div class="love-card"><span class="love-quote">"</span>The whole collection!!!!</div>
+        <div class="love-card"><span class="love-quote">"</span>That denimmm 😮‍💨🫰</div>
+        <div class="love-card"><span class="love-quote">"</span>Every single piece is 🔥🔥❤️</div>
+        <div class="love-card"><span class="love-quote">"</span>All 🔥🔥</div>
+        <div class="love-card"><span class="love-quote">"</span>Love ittt 😍😍😍</div>
+      </div>
+    </div>
+
+    <!-- Row 2 — scrolls right -->
+    <div class="love-row">
+      <div class="love-track love-track-right">
+        <div class="love-card love-card-gold"><span class="love-quote">"</span>This is giving 🔥🔥🔥. I think it's time for some shopping 🛍️❤️</div>
+        <div class="love-card love-card-gold"><span class="love-quote">"</span>Ouuu!! 😍😍 👏</div>
+        <div class="love-card love-card-gold"><span class="love-quote">"</span>Every single piece!!!!!! 🔥🔥🔥 👏</div>
+        <div class="love-card love-card-gold"><span class="love-quote">"</span>That denim piece 😍😍</div>
+        <div class="love-card love-card-gold"><span class="love-quote">"</span>Which one will I choose 😍</div>
+        <div class="love-card love-card-gold"><span class="love-quote">"</span>Every single piece? Stunning 🔥🔥 😍</div>
+        <div class="love-card love-card-gold"><span class="love-quote">"</span>This is giving 🔥🔥🔥. I think it's time for some shopping 🛍️❤️</div>
+        <div class="love-card love-card-gold"><span class="love-quote">"</span>Ouuu!! 😍😍 👏</div>
+        <div class="love-card love-card-gold"><span class="love-quote">"</span>Every single piece!!!!!! 🔥🔥🔥 👏</div>
+        <div class="love-card love-card-gold"><span class="love-quote">"</span>That denim piece 😍😍</div>
+        <div class="love-card love-card-gold"><span class="love-quote">"</span>Which one will I choose 😍</div>
+        <div class="love-card love-card-gold"><span class="love-quote">"</span>Every single piece? Stunning 🔥🔥 😍</div>
+      </div>
+    </div>
+
+    <!-- Row 3 — scrolls left -->
+    <div class="love-row">
+      <div class="love-track love-track-left" style="animation-duration: 35s;">
+        <div class="love-card"><span class="love-quote">"</span>Love thisssss!!! Wear TAM to the world 🔥🔥</div>
+        <div class="love-card"><span class="love-quote">"</span>One word, wow!</div>
+        <div class="love-card"><span class="love-quote">"</span>Alpha collection 😍🔥</div>
+        <div class="love-card"><span class="love-quote">"</span>I love them all! Well done sweetheart!!!!</div>
+        <div class="love-card"><span class="love-quote">"</span>This is so beautiful 🔥🔥</div>
+        <div class="love-card"><span class="love-quote">"</span>I want all theseeee 🔥</div>
+        <div class="love-card"><span class="love-quote">"</span>The denim especially ❤️</div>
+        <div class="love-card"><span class="love-quote">"</span>They are all stunning ❤️❤️❤️</div>
+        <div class="love-card"><span class="love-quote">"</span>The whole ALPHA COLLECTION 🔥🔥🔥🔥</div>
+        <div class="love-card"><span class="love-quote">"</span>It shows actually thought, not just regular basic designs we see everywhere</div>
+        <div class="love-card"><span class="love-quote">"</span>Love thisssss!!! Wear TAM to the world 🔥🔥</div>
+        <div class="love-card"><span class="love-quote">"</span>One word, wow!</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============================================================
+       INSTAGRAM / SOCIALS
+  ============================================================ -->
+  <section class="social-section" id="social">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <p class="section-eyebrow">Follow Along</p>
+        <h2 class="section-title">@wear.tam</h2>
+        <p class="section-sub">Tag us in your TAM looks for a chance to be featured.</p>
+      </div>
+      <div class="social-grid reveal-up">
+        <a href="https://www.instagram.com/wear.tam" target="_blank" rel="noopener" class="social-tile st-1" aria-label="Visit our Instagram">
+          <div class="social-tile-overlay"><i class="fab fa-instagram"></i></div>
+        </a>
+        <a href="https://www.instagram.com/wear.tam" target="_blank" rel="noopener" class="social-tile st-2" aria-label="Visit our Instagram">
+          <div class="social-tile-overlay"><i class="fab fa-instagram"></i></div>
+        </a>
+        <a href="https://www.instagram.com/wear.tam" target="_blank" rel="noopener" class="social-tile st-3" aria-label="Visit our Instagram">
+          <div class="social-tile-overlay"><i class="fab fa-instagram"></i></div>
+        </a>
+        <a href="https://www.instagram.com/wear.tam" target="_blank" rel="noopener" class="social-tile st-4" aria-label="Visit our Instagram">
+          <div class="social-tile-overlay"><i class="fab fa-instagram"></i></div>
+        </a>
+        <a href="https://www.instagram.com/wear.tam" target="_blank" rel="noopener" class="social-tile st-5" aria-label="Visit our Instagram">
+          <div class="social-tile-overlay"><i class="fab fa-instagram"></i></div>
+        </a>
+        <a href="https://www.instagram.com/wear.tam" target="_blank" rel="noopener" class="social-tile st-6" aria-label="Visit our Instagram">
+          <div class="social-tile-overlay"><i class="fab fa-instagram"></i></div>
+        </a>
+      </div>
+      <div class="social-cta reveal-up">
+        <a href="https://www.instagram.com/wear.tam" target="_blank" rel="noopener" class="btn btn-outline">
+          <i class="fab fa-instagram"></i> Follow on Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       NEWSLETTER
+  ============================================================ -->
+  <section class="newsletter">
+    <div class="newsletter-inner reveal-up">
+      <p class="section-eyebrow" style="color: #C5AB80;">Stay in the loop</p>
+      <h2 class="newsletter-title">First looks. New drops.<br/>Yours before anyone else.</h2>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" placeholder="Your email address" required aria-label="Email address" />
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+      <p class="newsletter-note">No spam. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT SECTION
+  ============================================================ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-info reveal-left">
+          <p class="section-eyebrow">Get in Touch</p>
+          <h2 class="section-title">Let's <em>talk.</em></h2>
+          <p class="contact-text">Have a question about sizing, orders, or a custom request? We'd love to hear from you.</p>
+
+          <div class="contact-details">
+            <a href="mailto:hello@weartam.com" class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>hello@weartam.com</span>
+            </a>
+            <a href="tel:+2348143631189" class="contact-item">
+              <i class="fas fa-phone"></i>
+              <span>+234 814 363 1189</span>
+            </a>
+            <a href="https://wa.me/2348143631189" class="contact-item" target="_blank" rel="noopener">
+              <i class="fab fa-whatsapp"></i>
+              <span>Chat on WhatsApp</span>
+            </a>
+            <div class="contact-item">
+              <i class="fas fa-location-dot"></i>
+              <span>Abuja, Nigeria</span>
+            </div>
+          </div>
+
+          <div class="contact-socials">
+            <a href="https://www.instagram.com/wear.tam" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="social-icon" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+
+        <form class="contact-form reveal-right" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" placeholder="Alisa" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" placeholder="Musa" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us what's on your mind..." rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#home" class="nav-logo footer-logo">
+            <span class="logo-script">wear.</span><span class="logo-bold">TAM</span>
+          </a>
+          <p>The Alisa Musa.<br/>Put together every day.</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/wear.tam" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#collection">New Arrivals</a></li>
+            <li><a href="#collection">Dresses</a></li>
+            <li><a href="#collection">Tops</a></li>
+            <li><a href="#collection">Sets</a></li>
+            <li><a href="#collection">Outerwear</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-group">
+          <h4>Brand</h4>
+          <ul>
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#lookbook">Lookbook</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 wear.TAM | The Alisa Musa. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       CART DRAWER
+  ============================================================ -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h3>Your Bag <span id="cartDrawerCount">(0)</span></h3>
+      <button class="cart-close" id="cartClose" aria-label="Close cart"><i class="fas fa-xmark"></i></button>
+    </div>
+    <div class="cart-drawer-body" id="cartBody">
+      <div class="cart-empty" id="cartEmpty">
+        <i class="fas fa-shopping-bag"></i>
+        <p>Your bag is empty.</p>
+        <a href="#collection" class="btn btn-primary" id="cartShopLink">Shop Now</a>
+      </div>
+      <ul class="cart-items" id="cartItems"></ul>
+    </div>
+    <div class="cart-drawer-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cartTotal">₦0</strong>
+      </div>
+      <a href="#" class="btn btn-primary btn-full" id="checkoutBtn" target="_blank" rel="noopener">
+        Proceed to Payment <i class="fas fa-arrow-right"></i>
+      </a>
+      <p class="cart-secure"><i class="fas fa-lock"></i> Secured by Paystack</p>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PRODUCT MODAL
+  ============================================================ -->
+  <div class="modal-overlay" id="modalOverlay"></div>
+  <div class="product-modal" id="productModal" role="dialog" aria-modal="true" aria-label="Product details">
+    <button class="modal-close" id="modalClose" aria-label="Close modal"><i class="fas fa-xmark"></i></button>
+    <div class="modal-inner">
+      <div class="modal-gallery">
+        <div class="modal-main-img" id="modalMainImg"></div>
+        <div class="modal-thumbs" id="modalThumbs"></div>
+      </div>
+      <div class="modal-details">
+        <p class="modal-eyebrow" id="modalEyebrow">wear.TAM</p>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <p class="modal-price" id="modalPrice"></p>
+        <p class="modal-desc" id="modalDesc"></p>
+
+        <div class="modal-sizes">
+          <!-- Mode toggle -->
+          <div class="size-mode-toggle">
+            <button class="size-mode-btn active" id="modeStandard" data-mode="standard">Standard Size</button>
+            <button class="size-mode-btn" id="modeMeasurements" data-mode="measurements">My Measurements</button>
+          </div>
+
+          <!-- Standard sizes -->
+          <div class="size-panel" id="panelStandard">
+            <p class="size-label">Select your size</p>
+            <div class="size-options" id="sizeOptions">
+              <button class="size-btn">6</button>
+              <button class="size-btn">8</button>
+              <button class="size-btn active">10</button>
+              <button class="size-btn">12</button>
+              <button class="size-btn">14</button>
+              <button class="size-btn">16</button>
+              <button class="size-btn">18</button>
+              <button class="size-btn">20</button>
+            </div>
+            <a href="#" class="size-guide-link">Size Guide <i class="fas fa-chevron-right"></i></a>
+          </div>
+
+          <!-- Custom measurements -->
+          <div class="size-panel hidden" id="panelMeasurements">
+            <p class="size-label">Enter your measurements <span class="optional-tag">all optional</span></p>
+            <p class="measurements-note">All measurements in centimetres (cm). Your tailor can help if unsure.</p>
+            <div class="measurements-grid">
+              <div class="measurement-field">
+                <label for="mBust">
+                  <i class="fas fa-circle-dot"></i> Bust
+                </label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="mBust" placeholder="e.g. 92" min="50" max="200" />
+                  <span>cm</span>
+                </div>
+              </div>
+              <div class="measurement-field">
+                <label for="mWaist">
+                  <i class="fas fa-circle-dot"></i> Waist
+                </label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="mWaist" placeholder="e.g. 74" min="40" max="200" />
+                  <span>cm</span>
+                </div>
+              </div>
+              <div class="measurement-field">
+                <label for="mHips">
+                  <i class="fas fa-circle-dot"></i> Hips
+                </label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="mHips" placeholder="e.g. 98" min="50" max="200" />
+                  <span>cm</span>
+                </div>
+              </div>
+              <div class="measurement-field">
+                <label for="mHeight">
+                  <i class="fas fa-circle-dot"></i> Height
+                </label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="mHeight" placeholder="e.g. 165" min="100" max="220" />
+                  <span>cm</span>
+                </div>
+              </div>
+              <div class="measurement-field">
+                <label for="mShoulder">
+                  <i class="fas fa-circle-dot"></i> Shoulder Width
+                </label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="mShoulder" placeholder="e.g. 38" min="20" max="80" />
+                  <span>cm</span>
+                </div>
+              </div>
+              <div class="measurement-field">
+                <label for="mSleeve">
+                  <i class="fas fa-circle-dot"></i> Sleeve Length
+                </label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="mSleeve" placeholder="e.g. 60" min="20" max="100" />
+                  <span>cm</span>
+                </div>
+              </div>
+              <div class="measurement-field">
+                <label for="mThigh">
+                  <i class="fas fa-circle-dot"></i> Thigh
+                </label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="mThigh" placeholder="e.g. 56" min="30" max="120" />
+                  <span>cm</span>
+                </div>
+              </div>
+              <div class="measurement-field">
+                <label for="mInseam">
+                  <i class="fas fa-circle-dot"></i> Inseam
+                </label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="mInseam" placeholder="e.g. 76" min="30" max="120" />
+                  <span>cm</span>
+                </div>
+              </div>
+              <div class="measurement-field">
+                <label for="mBackLength">
+                  <i class="fas fa-circle-dot"></i> Back Length
+                </label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="mBackLength" placeholder="e.g. 42" min="20" max="80" />
+                  <span>cm</span>
+                </div>
+              </div>
+              <div class="measurement-field">
+                <label for="mNeck">
+                  <i class="fas fa-circle-dot"></i> Neck
+                </label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="mNeck" placeholder="e.g. 34" min="20" max="60" />
+                  <span>cm</span>
+                </div>
+              </div>
+            </div>
+            <p class="measurements-save-note"><i class="fas fa-info-circle"></i> Your measurements will be included with your order note.</p>
+            <button class="btn btn-outline btn-full" id="saveMeasurementsBtn" style="margin-top:12px;">
+              <i class="fas fa-bookmark"></i> Save to My Account
+            </button>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn btn-primary btn-full modal-add-btn" id="modalAddBtn">
+            <i class="fas fa-shopping-bag"></i> Add to Bag
+          </button>
+          <a href="#" class="btn btn-outline btn-full" id="modalPayBtn" target="_blank" rel="noopener">
+            <i class="fas fa-bolt"></i> Buy Now
+          </a>
+        </div>
+
+        <div class="modal-meta">
+          <div class="modal-meta-item">
+            <i class="fas fa-truck-fast"></i>
+            <span>Free delivery on orders above ₦100,000</span>
+          </div>
+          <div class="modal-meta-item">
+            <i class="fas fa-rotate-left"></i>
+            <span>7-day return policy</span>
+          </div>
+          <div class="modal-meta-item">
+            <i class="fas fa-lock"></i>
+            <span>Secure checkout via Paystack</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       TOAST NOTIFICATION
+  ============================================================ -->
+  <div class="toast" id="toast"></div>
+
+  <!-- ============================================================
+       BACK TO TOP
+  ============================================================ -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- ============================================================
+       AUTH MODAL
+  ============================================================ -->
+  <div class="auth-overlay" id="authOverlay"></div>
+  <div class="auth-modal" id="authModal" role="dialog" aria-modal="true" aria-label="Account">
+    <button class="modal-close auth-modal-close" id="authModalClose" aria-label="Close"><i class="fas fa-xmark"></i></button>
+
+    <div class="auth-modal-inner">
+      <div class="auth-brand">
+        <span class="logo-script">wear.</span><span class="logo-bold">TAM</span>
+      </div>
+
+      <!-- LOGIN PANEL -->
+      <div class="auth-panel" id="authPanelLogin">
+        <h2 class="auth-title">Welcome back</h2>
+        <p class="auth-sub">Log in to your TAM account</p>
+        <div class="auth-message" id="loginError" style="display:none;"></div>
+        <form id="loginForm" novalidate>
+          <div class="form-group">
+            <label for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" placeholder="you@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <div class="password-wrap">
+              <input type="password" id="loginPassword" placeholder="Your password" required />
+              <button type="button" class="pw-toggle" data-target="loginPassword" aria-label="Show password"><i class="fas fa-eye"></i></button>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Log In</button>
+        </form>
+        <p class="auth-switch">Forgot your password? <button class="auth-link" data-switch="reset">Reset it</button></p>
+        <p class="auth-switch">Don't have an account? <button class="auth-link" data-switch="signup">Sign up</button></p>
+      </div>
+
+      <!-- SIGNUP PANEL -->
+      <div class="auth-panel hidden" id="authPanelSignup">
+        <h2 class="auth-title">Create account</h2>
+        <p class="auth-sub">Join TAM for a better shopping experience</p>
+        <div class="auth-message" id="signupError" style="display:none;"></div>
+        <form id="signupForm" novalidate>
+          <div class="form-group">
+            <label for="signupName">Full Name</label>
+            <input type="text" id="signupName" placeholder="Alisa Musa" required />
+          </div>
+          <div class="form-group">
+            <label for="signupEmail">Email</label>
+            <input type="email" id="signupEmail" placeholder="you@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="signupPassword">Password</label>
+            <div class="password-wrap">
+              <input type="password" id="signupPassword" placeholder="Min. 6 characters" required />
+              <button type="button" class="pw-toggle" data-target="signupPassword" aria-label="Show password"><i class="fas fa-eye"></i></button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="signupConfirm">Confirm Password</label>
+            <div class="password-wrap">
+              <input type="password" id="signupConfirm" placeholder="Repeat password" required />
+              <button type="button" class="pw-toggle" data-target="signupConfirm" aria-label="Show password"><i class="fas fa-eye"></i></button>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+        </form>
+        <p class="auth-switch">Already have an account? <button class="auth-link" data-switch="login">Log in</button></p>
+      </div>
+
+      <!-- CONFIRM PANEL (shown after signup) -->
+      <div class="auth-panel hidden" id="authPanelConfirm">
+        <div class="confirm-icon"><i class="fas fa-envelope-circle-check"></i></div>
+        <h2 class="auth-title">Check your inbox</h2>
+        <p class="auth-sub">We've sent a confirmation link to your email address. Click it to activate your account and start shopping.</p>
+        <p class="confirm-note">Didn't get it? Check your spam folder or</p>
+        <button class="auth-link confirm-resend" id="resendConfirm">resend the email</button>
+        <div class="auth-message" id="resendMsg" style="display:none; margin-top:12px;"></div>
+        <button class="btn btn-outline btn-full" style="margin-top: 24px;" data-switch="login">Back to Log In</button>
+      </div>
+
+      <!-- RESET PANEL -->
+      <div class="auth-panel hidden" id="authPanelReset">
+        <h2 class="auth-title">Reset password</h2>
+        <p class="auth-sub">We'll send a reset link to your email</p>
+        <div class="auth-message" id="resetMsg" style="display:none;"></div>
+        <form id="resetForm" novalidate>
+          <div class="form-group">
+            <label for="resetEmail">Email</label>
+            <input type="email" id="resetEmail" placeholder="you@email.com" required />
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Send Reset Link</button>
+        </form>
+        <p class="auth-switch"><button class="auth-link" data-switch="login">Back to Log In</button></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/auth.js"></script>
+</body>
+</html>

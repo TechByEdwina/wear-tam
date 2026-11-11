@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="My Account | wear.TAM" />
+  <title>My Account | wear.TAM</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/account.css" />
+</head>
+<body class="account-page">
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-script">wear.</span><span class="logo-bold">TAM</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#collection" class="nav-link">Collection</a></li>
+        <li><a href="index.html#story" class="nav-link">Our Story</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-icon" id="authNavBtn" data-state="signed-out" aria-label="Account">
+          <i class="fas fa-circle-user"></i>
+        </button>
+        <a href="index.html" class="nav-icon" aria-label="Continue shopping" title="Continue shopping">
+          <i class="fas fa-shopping-bag"></i>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="index.html#collection" class="mobile-link">Collection</a></li>
+        <li><a href="index.html#story" class="mobile-link">Our Story</a></li>
+        <li><a href="index.html#contact" class="mobile-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       ACCOUNT LAYOUT
+  ============================================================ -->
+  <main class="account-main">
+
+    <!-- Redirect notice while checking auth -->
+    <div class="account-loading" id="accountLoading">
+      <div class="account-loading-inner">
+        <span class="logo-script">wear.</span><span class="logo-bold">TAM</span>
+        <p>Loading your account...</p>
+      </div>
+    </div>
+
+    <!-- Actual account content (hidden until auth confirmed) -->
+    <div class="account-content hidden" id="accountContent">
+
+      <!-- Sidebar -->
+      <aside class="account-sidebar">
+        <div class="account-avatar" id="accountAvatar">
+          <img id="avatarPreview" src="" alt="Profile photo" style="display:none; width:100%; height:100%; object-fit:cover; border-radius:50%;" />
+          <i class="fas fa-circle-user" id="avatarIcon"></i>
+          <label class="avatar-upload-btn" for="avatarInput" title="Change photo">
+            <i class="fas fa-camera"></i>
+          </label>
+          <input type="file" id="avatarInput" accept="image/*" style="display:none;" />
+        </div>
+        <h2 class="account-user-name" id="accountUserName">Loading...</h2>
+        <p class="account-user-email" id="accountUserEmail"></p>
+
+        <nav class="account-nav">
+          <button class="account-nav-item active" data-tab="profile">
+            <i class="fas fa-user"></i> Profile
+          </button>
+          <button class="account-nav-item" data-tab="measurements">
+            <i class="fas fa-ruler"></i> Measurements
+          </button>
+          <button class="account-nav-item" data-tab="orders">
+            <i class="fas fa-bag-shopping"></i> Orders
+          </button>
+          <button class="account-nav-item signout-btn" id="signOutBtn">
+            <i class="fas fa-arrow-right-from-bracket"></i> Sign Out
+          </button>
+        </nav>
+      </aside>
+
+      <!-- Main content area -->
+      <section class="account-body">
+
+        <!-- ── PROFILE TAB ── -->
+        <div class="account-tab active" id="tabProfile">
+          <div class="tab-header">
+            <h1 class="tab-title">My Profile</h1>
+            <p class="tab-sub">Manage your personal details and delivery address.</p>
+          </div>
+
+          <div class="account-message hidden" id="profileMsg"></div>
+
+          <form class="account-form" id="profileForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="profileFullName">Full Name</label>
+                <input type="text" id="profileFullName" placeholder="Alisa Musa" />
+              </div>
+              <div class="form-group">
+                <label for="profilePhone">Phone Number</label>
+                <input type="tel" id="profilePhone" placeholder="+234 800 000 0000" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="profileEmail">Email Address</label>
+              <input type="email" id="profileEmail" placeholder="you@email.com" disabled />
+              <span class="field-note">Email cannot be changed here.</span>
+            </div>
+            <div class="form-group">
+              <label for="profileAddress">Delivery Address</label>
+              <textarea id="profileAddress" rows="3" placeholder="House number, street, area, city, state"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+          </form>
+
+          <div class="account-divider"></div>
+
+          <div class="tab-header">
+            <h2 class="tab-title" style="font-size:1.4rem;">Change Password</h2>
+            <p class="tab-sub">Leave blank if you don't want to change your password.</p>
+          </div>
+
+          <div class="account-message hidden" id="passwordMsg"></div>
+
+          <form class="account-form" id="passwordForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="newPassword">New Password</label>
+                <input type="password" id="newPassword" placeholder="Min. 6 characters" />
+              </div>
+              <div class="form-group">
+                <label for="confirmPassword">Confirm New Password</label>
+                <input type="password" id="confirmPassword" placeholder="Repeat new password" />
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Password</button>
+          </form>
+        </div>
+
+        <!-- ── MEASUREMENTS TAB ── -->
+        <div class="account-tab hidden" id="tabMeasurements">
+          <div class="tab-header">
+            <h1 class="tab-title">My Measurements</h1>
+            <p class="tab-sub">Save your measurements once and they'll pre-fill every time you shop. All in centimetres (cm).</p>
+          </div>
+
+          <div class="measurements-guide">
+            <i class="fas fa-circle-info"></i>
+            <span>Not sure how to measure? Ask your tailor or use a flexible tape measure. Measure over light clothing for the most accurate fit.</span>
+          </div>
+
+          <div class="account-message hidden" id="measurementsMsg"></div>
+
+          <form class="account-form" id="accountMeasurementsForm">
+            <div class="measurements-section-label">Upper Body</div>
+            <div class="form-row three-col">
+              <div class="form-group">
+                <label for="aBust">Bust <span class="field-note">fullest part of chest</span></label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="aBust" placeholder="e.g. 92" min="50" max="200" />
+                  <span>cm</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="aShoulder">Shoulder Width <span class="field-note">back, shoulder to shoulder</span></label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="aShoulder" placeholder="e.g. 38" min="20" max="80" />
+                  <span>cm</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="aSleeve">Sleeve Length <span class="field-note">shoulder to wrist</span></label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="aSleeve" placeholder="e.g. 60" min="20" max="100" />
+                  <span>cm</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="aBackLength">Back Length <span class="field-note">nape to waist</span></label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="aBackLength" placeholder="e.g. 42" min="20" max="80" />
+                  <span>cm</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="aNeck">Neck <span class="field-note">base of neck</span></label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="aNeck" placeholder="e.g. 34" min="20" max="60" />
+                  <span>cm</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="measurements-section-label">Middle Body</div>
+            <div class="form-row three-col">
+              <div class="form-group">
+                <label for="aWaist">Waist <span class="field-note">narrowest part</span></label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="aWaist" placeholder="e.g. 74" min="40" max="200" />
+                  <span>cm</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="aHips">Hips <span class="field-note">fullest part</span></label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="aHips" placeholder="e.g. 98" min="50" max="200" />
+                  <span>cm</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="measurements-section-label">Lower Body</div>
+            <div class="form-row three-col">
+              <div class="form-group">
+                <label for="aThigh">Thigh <span class="field-note">fullest part</span></label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="aThigh" placeholder="e.g. 56" min="30" max="120" />
+                  <span>cm</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="aInseam">Inseam <span class="field-note">crotch to floor</span></label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="aInseam" placeholder="e.g. 76" min="30" max="120" />
+                  <span>cm</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="aHeight">Full Height</label>
+                <div class="measurement-input-wrap">
+                  <input type="number" id="aHeight" placeholder="e.g. 165" min="100" max="220" />
+                  <span>cm</span>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Save Measurements</button>
+          </form>
+        </div>
+
+        <!-- ── ORDERS TAB ── -->
+        <div class="account-tab hidden" id="tabOrders">
+          <div class="tab-header">
+            <h1 class="tab-title">My Orders</h1>
+            <p class="tab-sub">Your order history with wear.TAM.</p>
+          </div>
+
+          <div class="orders-list" id="ordersList">
+            <div class="orders-empty" id="ordersEmpty">
+              <i class="fas fa-bag-shopping"></i>
+              <p>You haven't placed any orders yet.</p>
+              <a href="index.html#collection" class="btn btn-primary">Shop the Collection</a>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/account.js"></script>
+</body>
+</html>
