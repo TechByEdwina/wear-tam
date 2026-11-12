@@ -674,7 +674,7 @@
         <span>Total</span>
         <strong id="cartTotal">₦0</strong>
       </div>
-      <a href="#" class="btn btn-primary btn-full" id="checkoutBtn" target="_blank" rel="noopener">
+      <a href="#" class="btn btn-primary btn-full" id="checkoutBtn" onclick="openCheckoutFromCart(event)">
         Proceed to Payment <i class="fas fa-arrow-right"></i>
       </a>
       <p class="cart-secure"><i class="fas fa-lock"></i> Secured by Paystack</p>
@@ -828,7 +828,7 @@
           <button class="btn btn-primary btn-full modal-add-btn" id="modalAddBtn">
             <i class="fas fa-shopping-bag"></i> Add to Bag
           </button>
-          <a href="#" class="btn btn-outline btn-full" id="modalPayBtn" target="_blank" rel="noopener">
+          <a href="#" class="btn btn-outline btn-full" id="modalPayBtn" onclick="openCheckoutFromModal(event)">
             <i class="fas fa-bolt"></i> Buy Now
           </a>
         </div>
@@ -959,10 +959,83 @@
     </div>
   </div>
 
+  <!-- ============================================================
+       CHECKOUT MODAL
+  ============================================================ -->
+  <div class="checkout-overlay" id="checkoutOverlay"></div>
+  <div class="checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-label="Checkout">
+    <button class="modal-close checkout-modal-close" id="checkoutModalClose" aria-label="Close"><i class="fas fa-xmark"></i></button>
+
+    <!-- STEP 1: Order details form -->
+    <div class="checkout-panel" id="checkoutPanelForm">
+      <div class="checkout-header">
+        <span class="logo-script">wear.</span><span class="logo-bold">TAM</span>
+        <h2 class="checkout-title">Almost there</h2>
+        <p class="checkout-sub">Fill in your details and we'll get your order to you.</p>
+      </div>
+
+      <div class="checkout-summary" id="checkoutSummary"></div>
+
+      <div class="checkout-message error hidden" id="checkoutError"></div>
+
+      <form id="checkoutForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="coFirstName">First Name</label>
+            <input type="text" id="coFirstName" placeholder="Alisa" required />
+          </div>
+          <div class="form-group">
+            <label for="coLastName">Last Name</label>
+            <input type="text" id="coLastName" placeholder="Musa" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="coEmail">Email Address</label>
+          <input type="email" id="coEmail" placeholder="you@email.com" required />
+          <span class="field-note">Order confirmation will be sent here.</span>
+        </div>
+        <div class="form-group">
+          <label for="coPhone">Phone Number</label>
+          <input type="tel" id="coPhone" placeholder="+234 800 000 0000" required />
+        </div>
+        <div class="form-group">
+          <label for="coAddress">Delivery Address</label>
+          <textarea id="coAddress" rows="3" placeholder="House number, street, area, city, state" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="coNotes">Order Notes <span class="optional-tag">optional</span></label>
+          <input type="text" id="coNotes" placeholder="Any special requests or notes" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-full" id="checkoutPayBtn">
+          <i class="fas fa-lock"></i> Pay with Paystack
+        </button>
+        <p class="checkout-secure"><i class="fas fa-lock"></i> Secured by Paystack · Your payment is safe</p>
+      </form>
+    </div>
+
+    <!-- STEP 2: Success screen -->
+    <div class="checkout-panel hidden" id="checkoutPanelSuccess">
+      <div class="checkout-success-inner">
+        <div class="success-icon"><i class="fas fa-circle-check"></i></div>
+        <h2 class="checkout-title">Order Confirmed!</h2>
+        <p class="checkout-sub">Thank you for shopping with wear.TAM. Your order has been received and we'll be in touch shortly with delivery details.</p>
+        <div class="success-order-ref" id="successOrderRef"></div>
+        <a href="https://wa.me/2348143631189" target="_blank" rel="noopener" class="btn btn-primary btn-full" style="margin-top: 24px;">
+          <i class="fab fa-whatsapp"></i> Chat with us on WhatsApp
+        </a>
+        <button class="btn btn-outline btn-full" id="successContinueBtn" style="margin-top: 12px;">
+          Continue Shopping
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Scripts -->
+  <script src="https://js.paystack.co/v1/inline.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="assets/js/config.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/auth.js"></script>
+  <script src="assets/js/checkout.js"></script>
 </body>
 </html>
