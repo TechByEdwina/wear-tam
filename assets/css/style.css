@@ -643,15 +643,15 @@ ul { list-style: none; }
 .product-img-1  { background: url('../images/becca-main.PNG') center/cover no-repeat; }
 .product-img-2  { background: url('../images/red-dress-full.PNG') center/cover no-repeat; }
 .product-img-3  { background: url('../images/Lily-set-purple.jpg') center/cover no-repeat; }
-.product-img-4  { background: url('../images/pinkskirt-full.PNG') center/cover no-repeat; }
-.product-img-5  { background: url('../images/Kayla-Suit-Set-Pants.PNG') center/cover no-repeat; }
+.product-img-4  { background: url('../images/kayla-suit-skirt-main.PNG') center/cover no-repeat; }
+.product-img-5  { background: url('../images/kayla-suit-set-pants-main.PNG') center/cover no-repeat; }
 .product-img-6  { background: url('../images/lily-set-black-main.jpeg') center/cover no-repeat; }
 
 .product-img-hover { opacity: 0; }
 .product-img-1h { background: url('../images/becca-main.PNG') center/cover no-repeat; }
 .product-img-2h { background: url('../images/red-dress-stylish.PNG') center/cover no-repeat; }
 .product-img-3h { background: url('../images/Lily-set-purple-02.jpg') center/cover no-repeat; }
-.product-img-4h { background: url('../images/pink-walking.PNG') center/cover no-repeat; }
+.product-img-4h { background: url('../images/kayla-suit-skirt-main.PNG') center/cover no-repeat; }
 .product-img-5h { background: url('../images/Kayla-Suit-Set-Pants02.PNG') center/cover no-repeat; }
 .product-img-6h { background: url('../images/black-dress-style.PNG') center/cover no-repeat; }
 
@@ -909,7 +909,7 @@ ul { list-style: none; }
 /* real images across lookbook, alternating between the two shots */
 .lb-3 { background: url('../images/lily-set-black-thumbnail02.jpg') center/cover no-repeat; }
 .lb-4 { background: url('../images/red-dress-full.PNG') center/cover no-repeat; }
-.lb-5 { background: url('../images/pinkskirt-full.PNG') center/cover no-repeat; }
+.lb-5 { background: url('../images/kayla-suit-skirt-main.PNG') center/cover no-repeat; }
 .lb-6 { background: url('../images/becca-main.PNG') center/cover no-repeat; }
 
 .lb-overlay {
@@ -1031,7 +1031,7 @@ ul { list-style: none; }
 .st-1 { background: url('../images/black-dress-style.PNG') center/cover no-repeat; }
 .st-2 { background: url('../images/lily-set-black-thumbnail02.jpg') center/cover no-repeat; }
 .st-3 { background: url('../images/becca-main.PNG') center/cover no-repeat; }
-.st-4 { background: url('../images/pink-walking.PNG') center/cover no-repeat; }
+.st-4 { background: url('../images/kayla-suit-skirt-main.PNG') center/cover no-repeat; }
 .st-5 { background: url('../images/red-dress-stylish.PNG') center/cover no-repeat; }
 .st-6 { background: url('../images/pink-skirt.PNG') center/cover no-repeat; }
 

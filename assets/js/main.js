@@ -212,8 +212,8 @@ const products = {
     priceRaw: 70000,
     category: 'sets',
     description: 'From the Alpha Collection by wear.TAM. A pink skirt suit set that commands a room. Feminine, bold, and completely TAM.',
-    gradient: "url('assets/images/pinkskirt-full.PNG') center/cover no-repeat",
-    gradientHover: "url('assets/images/pink-walking.PNG') center/cover no-repeat",
+    gradient: "url('assets/images/kayla-suit-skirt-main.PNG') center/cover no-repeat",
+    gradientHover: "url('assets/images/kayla-suit-skirt-main.PNG') center/cover no-repeat",
     extraImages: [],
     paymentLink: '#'
   },
@@ -224,9 +224,10 @@ const products = {
     priceRaw: 69000,
     category: 'sets',
     description: 'From the Alpha Collection by wear.TAM. The Kayla Suit Set in pants. A cream silhouette that moves with quiet confidence. Timeless from every angle.',
-    gradient: "url('assets/images/Kayla-Suit-Set-Pants.PNG') center/cover no-repeat",
+    gradient: "url('assets/images/kayla-suit-set-pants-main.PNG') center/cover no-repeat",
     gradientHover: "url('assets/images/Kayla-Suit-Set-Pants02.PNG') center/cover no-repeat",
     extraImages: [
+      "url('assets/images/Kayla-Suit-Set-Pants.PNG') center/cover no-repeat",
       "url('assets/images/kayla-suit-pants-thumbnail.jpg') center/cover no-repeat",
       "url('assets/images/kayla-suit-pants-thumbnail02.jpg') center/cover no-repeat"
     ],
