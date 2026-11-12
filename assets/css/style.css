@@ -2306,3 +2306,68 @@ ul { list-style: none; }
   border-right: 1px solid var(--grey-light);
   line-height: 28px;
 }
+
+/* ─── SIZE BUTTON SUB-LABEL ───────────────────────────── */
+.size-btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  height: 52px;
+  width: 48px;
+}
+
+.size-sub {
+  font-size: 0.55rem;
+  font-weight: 400;
+  color: var(--grey-soft);
+  letter-spacing: 0;
+  font-style: normal;
+  line-height: 1;
+}
+
+.size-btn.active .size-sub { color: rgba(245,245,240,0.6); }
+
+.size-guide-note {
+  font-size: 0.68rem;
+  color: var(--grey-soft);
+  font-style: italic;
+  margin-top: 8px;
+  letter-spacing: 0.02em;
+}
+
+/* ─── CHECKOUT SIZE SECTION ───────────────────────────── */
+.checkout-size-section {
+  border-top: 1px solid var(--grey-light);
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+
+.checkout-size-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.checkout-size-toggle { margin-bottom: 16px; }
+
+.checkout-size-panel { }
+.checkout-size-panel.hidden { display: none; }
+
+.co-size-options {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.co-measurements-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}

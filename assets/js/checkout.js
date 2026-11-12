@@ -253,7 +253,7 @@ function initCheckout() {
     const handler = PaystackPop.setup({
       key:       PAYSTACK_PUBLIC_KEY,
       email:     email,
-      amount:    total * 100, // Paystack uses kobo
+      amount:    total * 100,
       currency:  'NGN',
       ref:       'TAM-' + Date.now() + '-' + Math.floor(Math.random() * 1000),
       metadata: {
@@ -266,13 +266,25 @@ function initCheckout() {
         ]
       },
       callback: async function(response) {
-        // Payment successful
+        const sizeInfo = getCheckoutSize()
         await saveOrder({
           customerName:    firstName + ' ' + lastName,
           customerEmail:   email,
           customerPhone:   phone,
           deliveryAddress: address,
           notes:           notes,
+          sizeInfo:        sizeInfo,
+          items:           checkoutItems,
+          total:           total,
+          paymentRef:      response.reference
+        })
+        await sendOrderEmailNotification({
+          customerName:    firstName + ' ' + lastName,
+          customerEmail:   email,
+          customerPhone:   phone,
+          deliveryAddress: address,
+          notes:           notes,
+          sizeInfo:        sizeInfo,
           items:           checkoutItems,
           total:           total,
           paymentRef:      response.reference
@@ -280,7 +292,6 @@ function initCheckout() {
         showSuccessPanel(response.reference)
       },
       onClose: function() {
-        // Customer closed Paystack without paying
         btn.disabled = false
         btn.innerHTML = '<i class="fas fa-lock"></i> Pay with Paystack'
       }
@@ -290,12 +301,55 @@ function initCheckout() {
   })
 }
 
+/* ─── EMAIL NOTIFICATION TO TAM ──────────────────────── */
+async function sendOrderEmailNotification({ customerName, customerEmail, customerPhone, deliveryAddress, notes, sizeInfo, items, total, paymentRef }) {
+  const itemsList = items.map(i => `${i.name} x${i.qty || 1} — ₦${(i.priceRaw * (i.qty||1)).toLocaleString('en-NG')}`).join('\n')
+
+  const message = `
+NEW ORDER — wear.TAM
+
+Payment Ref: ${paymentRef}
+Total: ₦${total.toLocaleString('en-NG')}
+
+CUSTOMER
+Name: ${customerName}
+Email: ${customerEmail}
+Phone: ${customerPhone}
+
+DELIVERY ADDRESS
+${deliveryAddress}
+
+SIZE / MEASUREMENTS
+${sizeInfo}
+
+ORDER ITEMS
+${itemsList}
+
+NOTES
+${notes || 'None'}
+  `.trim()
+
+  try {
+    await fetch('https://formspree.io/f/xzerbdbl', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        name:    'New Order from ' + customerName,
+        email:   customerEmail,
+        message: message,
+        _subject: '🛍️ New TAM Order — ' + paymentRef
+      })
+    })
+  } catch (err) {
+    console.error('Order email notification failed:', err)
+  }
+}
+
 /* ─── SAVE ORDER TO SUPABASE ──────────────────────────── */
-async function saveOrder({ customerName, customerEmail, customerPhone, deliveryAddress, notes, items, total, paymentRef }) {
+async function saveOrder({ customerName, customerEmail, customerPhone, deliveryAddress, notes, sizeInfo, items, total, paymentRef }) {
   if (!_db) return
 
   try {
-    // Check if user is logged in
     const { data: { session } } = await _db.auth.getSession()
 
     await _db.from('orders').insert({
@@ -303,14 +357,13 @@ async function saveOrder({ customerName, customerEmail, customerPhone, deliveryA
       customer_name:    customerName,
       customer_email:   customerEmail,
       customer_phone:   customerPhone,
-      delivery_address: deliveryAddress + (notes ? '\n\nNotes: ' + notes : ''),
+      delivery_address: deliveryAddress + (notes ? '\n\nNotes: ' + notes : '') + '\n\nSize: ' + sizeInfo,
       items:            items,
       total:            total,
       status:           'pending',
       payment_ref:      paymentRef
     })
   } catch (err) {
-    // Don't block the success screen if DB save fails
     console.error('Order save error:', err)
   }
 }
@@ -348,4 +401,57 @@ function escapeHtml(str) {
 }
 
 /* ─── INIT ────────────────────────────────────────────── */
-document.addEventListener('DOMContentLoaded', initCheckout)
+document.addEventListener('DOMContentLoaded', () => {
+  initCheckout()
+  initCheckoutSizeToggle()
+})
+
+/* ─── CHECKOUT SIZE TOGGLE ────────────────────────────── */
+function initCheckoutSizeToggle() {
+  const modeBtns = document.querySelectorAll('[data-co-mode]')
+  const panelStd = document.getElementById('coPanelStandard')
+  const panelMes = document.getElementById('coPanelMeasurements')
+
+  modeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      modeBtns.forEach(b => b.classList.remove('active'))
+      btn.classList.add('active')
+      if (btn.dataset.coMode === 'standard') {
+        panelStd?.classList.remove('hidden')
+        panelMes?.classList.add('hidden')
+      } else {
+        panelStd?.classList.add('hidden')
+        panelMes?.classList.remove('hidden')
+      }
+    })
+  })
+
+  // Size button selection in checkout
+  document.querySelectorAll('.co-size-options .size-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.co-size-options .size-btn').forEach(b => b.classList.remove('active'))
+      btn.classList.add('active')
+    })
+  })
+}
+
+/* ─── GET CHECKOUT SIZE ───────────────────────────────── */
+function getCheckoutSize() {
+  const activeMode = document.querySelector('[data-co-mode].active')?.dataset?.coMode || 'standard'
+
+  if (activeMode === 'standard') {
+    const activeBtn = document.querySelector('.co-size-options .size-btn.active')
+    return activeBtn ? `UK ${activeBtn.textContent.replace(/\d+["']/, '').trim()} (${activeBtn.dataset.bust || ''} bust)` : 'Not specified'
+  } else {
+    const bust   = document.getElementById('coMBust')?.value
+    const waist  = document.getElementById('coMWaist')?.value
+    const hips   = document.getElementById('coMHips')?.value
+    const height = document.getElementById('coMHeight')?.value
+    const parts  = []
+    if (bust)   parts.push(`Bust: ${bust}"`)
+    if (waist)  parts.push(`Waist: ${waist}"`)
+    if (hips)   parts.push(`Hips: ${hips}"`)
+    if (height) parts.push(`Height: ${height}`)
+    return parts.length ? parts.join(', ') : 'Custom (not filled)'
+  }
+}

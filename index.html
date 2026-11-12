@@ -709,16 +709,17 @@
           <div class="size-panel" id="panelStandard">
             <p class="size-label">Select your size</p>
             <div class="size-options" id="sizeOptions">
-              <button class="size-btn">6</button>
-              <button class="size-btn">8</button>
-              <button class="size-btn active">10</button>
-              <button class="size-btn">12</button>
-              <button class="size-btn">14</button>
-              <button class="size-btn">16</button>
-              <button class="size-btn">18</button>
-              <button class="size-btn">20</button>
+              <button class="size-btn" data-eu="32">6<span class="size-sub">EU 32</span></button>
+              <button class="size-btn" data-eu="34">8<span class="size-sub">EU 34</span></button>
+              <button class="size-btn active" data-eu="36">10<span class="size-sub">EU 36</span></button>
+              <button class="size-btn" data-eu="38">12<span class="size-sub">EU 38</span></button>
+              <button class="size-btn" data-eu="40">14<span class="size-sub">EU 40</span></button>
+              <button class="size-btn" data-eu="42">16<span class="size-sub">EU 42</span></button>
+              <button class="size-btn" data-eu="44">18<span class="size-sub">EU 44</span></button>
+              <button class="size-btn" data-eu="46">20<span class="size-sub">EU 46</span></button>
             </div>
-            <a href="#" class="size-guide-link">Size Guide <i class="fas fa-chevron-right"></i></a>
+            <p class="size-guide-note">Numbers in brackets are EU sizes used in Nigeria</p>
+            <a href="#" class="size-guide-link">Full Size Guide <i class="fas fa-chevron-right"></i></a>
           </div>
 
           <!-- Custom measurements -->
@@ -758,8 +759,8 @@
                   <i class="fas fa-circle-dot"></i> Height
                 </label>
                 <div class="measurement-input-wrap">
-                  <input type="number" id="mHeight" placeholder="e.g. 165" min="100" max="220" />
-                  <span>cm</span>
+                  <input type="text" id="mHeight" placeholder='e.g. 5&apos;4"' />
+                  <span>ft</span>
                 </div>
               </div>
               <div class="measurement-field">
@@ -1006,7 +1007,52 @@
           <label for="coNotes">Order Notes <span class="optional-tag">optional</span></label>
           <input type="text" id="coNotes" placeholder="Any special requests or notes" />
         </div>
-        <button type="submit" class="btn btn-primary btn-full" id="checkoutPayBtn">
+
+        <!-- Size confirmation -->
+        <div class="checkout-size-section">
+          <label class="checkout-size-label">Confirm Your Size</label>
+          <div class="size-mode-toggle checkout-size-toggle">
+            <button type="button" class="size-mode-btn active" data-co-mode="standard">UK Size</button>
+            <button type="button" class="size-mode-btn" data-co-mode="measurements">My Measurements</button>
+          </div>
+
+          <!-- Standard UK sizes -->
+          <div class="checkout-size-panel" id="coPanelStandard">
+            <div class="size-options co-size-options">
+              <button type="button" class="size-btn" data-eu="32">6<span class="size-sub">EU 32</span></button>
+              <button type="button" class="size-btn" data-eu="34">8<span class="size-sub">EU 34</span></button>
+              <button type="button" class="size-btn active" data-eu="36">10<span class="size-sub">EU 36</span></button>
+              <button type="button" class="size-btn" data-eu="38">12<span class="size-sub">EU 38</span></button>
+              <button type="button" class="size-btn" data-eu="40">14<span class="size-sub">EU 40</span></button>
+              <button type="button" class="size-btn" data-eu="42">16<span class="size-sub">EU 42</span></button>
+              <button type="button" class="size-btn" data-eu="44">18<span class="size-sub">EU 44</span></button>
+              <button type="button" class="size-btn" data-eu="46">20<span class="size-sub">EU 46</span></button>
+            </div>
+            <p class="size-guide-note">Numbers in brackets are EU sizes used in Nigeria</p>
+          </div>
+
+          <!-- Custom measurements -->
+          <div class="checkout-size-panel hidden" id="coPanelMeasurements">
+            <div class="co-measurements-grid">
+              <div class="measurement-field">
+                <label for="coMBust">Bust</label>
+                <div class="measurement-input-wrap"><input type="number" id="coMBust" placeholder='e.g. 36"' /><span>in</span></div>
+              </div>
+              <div class="measurement-field">
+                <label for="coMWaist">Waist</label>
+                <div class="measurement-input-wrap"><input type="number" id="coMWaist" placeholder='e.g. 28"' /><span>in</span></div>
+              </div>
+              <div class="measurement-field">
+                <label for="coMHips">Hips</label>
+                <div class="measurement-input-wrap"><input type="number" id="coMHips" placeholder='e.g. 38"' /><span>in</span></div>
+              </div>
+              <div class="measurement-field">
+                <label for="coMHeight">Height</label>
+                <div class="measurement-input-wrap"><input type="text" id="coMHeight" placeholder='e.g. 5&apos;4"' /><span>ft</span></div>
+              </div>
+            </div>
+          </div>
+        </div>        <button type="submit" class="btn btn-primary btn-full" id="checkoutPayBtn">
           <i class="fas fa-lock"></i> Pay with Paystack
         </button>
         <p class="checkout-secure"><i class="fas fa-lock"></i> Secured by Paystack · Your payment is safe</p>
