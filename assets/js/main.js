@@ -172,6 +172,23 @@ const products = {
   },
   2: {
     id: 2,
+    name: 'The Cherry Dress',
+    price: '₦38,000',
+    priceRaw: 38000,
+    category: 'dresses',
+    description: 'From the Alpha Collection by wear.TAM. A red dress built for the woman who walks into a room and owns it instantly.',
+    gradient: "url('assets/images/red-dress-full.PNG') center/cover no-repeat",
+    gradientHover: "url('assets/images/red-dress-stylish.PNG') center/cover no-repeat",
+    extraImages: [
+      "url('assets/images/cherry-dress-thumbnail.jpg') center/cover no-repeat",
+      "url('assets/images/cherry-dress-thumbnail02.jpg') center/cover no-repeat",
+      "url('assets/images/cherry-dress-thumbnail03.jpg') center/cover no-repeat",
+      "url('assets/images/cherry-dress-thumbnail04.jpg') center/cover no-repeat"
+    ],
+    paymentLink: '#'
+  },
+  3: {
+    id: 3,
     name: 'Lily Set',
     price: '₦49,000',
     priceRaw: 49000,
@@ -185,23 +202,6 @@ const products = {
       "url('assets/images/lily-thumbnail02.jpg') center/cover no-repeat",
       "url('assets/images/lily-thumbnail03.jpg') center/cover no-repeat",
       "url('assets/images/lily-thumbnail04.jpg') center/cover no-repeat"
-    ],
-    paymentLink: '#'
-  },
-  3: {
-    id: 3,
-    name: 'The Cherry Dress',
-    price: '₦38,000',
-    priceRaw: 38000,
-    category: 'dresses',
-    description: 'From the Alpha Collection by wear.TAM. A red dress built for the woman who walks into a room and owns it instantly.',
-    gradient: "url('assets/images/red-dress-full.PNG') center/cover no-repeat",
-    gradientHover: "url('assets/images/red-dress-stylish.PNG') center/cover no-repeat",
-    extraImages: [
-      "url('assets/images/cherry-dress-thumbnail.jpg') center/cover no-repeat",
-      "url('assets/images/cherry-dress-thumbnail02.jpg') center/cover no-repeat",
-      "url('assets/images/cherry-dress-thumbnail03.jpg') center/cover no-repeat",
-      "url('assets/images/cherry-dress-thumbnail04.jpg') center/cover no-repeat"
     ],
     paymentLink: '#'
   },
@@ -239,7 +239,7 @@ const products = {
     priceRaw: 49000,
     category: 'dresses',
     description: 'From the Alpha Collection by wear.TAM. The Lily Set in classic black. The same elegant silhouette, in its most timeless form.',
-    gradient: "url('assets/images/Lily-set-black.PNG') center/cover no-repeat",
+    gradient: "url('assets/images/lily-set-black-main.jpeg') center/cover no-repeat",
     gradientHover: "url('assets/images/black-dress-style.PNG') center/cover no-repeat",
     extraImages: [
       "url('assets/images/Lily-set-twomodel.jpg') center/cover no-repeat",
