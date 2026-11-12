@@ -165,8 +165,8 @@ const products = {
     priceRaw: 72500,
     category: 'sets',
     description: 'From the Alpha Collection by wear.TAM. A denim piece that redefines casual. Structured, polished, effortlessly cool. The bestseller of the collection.',
-    gradient: "url('assets/images/denim-full.PNG') center/cover no-repeat",
-    gradientHover: "url('assets/images/denim-style.PNG') center/cover no-repeat",
+    gradient: "url('assets/images/becca-main.PNG') center/cover no-repeat",
+    gradientHover: "url('assets/images/becca-main.PNG') center/cover no-repeat",
     extraImages: [],
     paymentLink: '#'
   },
