@@ -161,8 +161,8 @@ const products = {
   1: {
     id: 1,
     name: 'Becca Denim Set',
-    price: '₦72,500',
-    priceRaw: 72500,
+    price: '₦1,000',
+    priceRaw: 1000,
     category: 'sets',
     description: 'From the Alpha Collection by wear.TAM. A denim piece that redefines casual. Structured, polished, effortlessly cool. The bestseller of the collection.',
     gradient: "url('assets/images/denim-full.PNG') center/cover no-repeat",

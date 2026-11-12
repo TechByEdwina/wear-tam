@@ -15,13 +15,30 @@ let checkoutSource = ''
 /* ─── OPEN CHECKOUT FROM CART ─────────────────────────── */
 function openCheckoutFromCart(e) {
   if (e) e.preventDefault()
+
   const cartItems = JSON.parse(localStorage.getItem('tam_cart') || '[]')
-  if (!cartItems.length) return
-  checkoutItems  = cartItems
+  if (!cartItems.length) {
+    alert('Your bag is empty.')
+    return
+  }
+
+  // Map cart items to checkout format
+  checkoutItems = cartItems.map(item => ({
+    name:     item.name || 'TAM Product',
+    price:    item.price || '₦0',
+    priceRaw: item.priceRaw || 0,
+    size:     item.size || 'Not specified',
+    qty:      item.qty || 1
+  }))
   checkoutSource = 'cart'
+
+  // Close cart drawer first
   document.getElementById('cartDrawer')?.classList.remove('open')
   document.getElementById('cartOverlay')?.classList.remove('open')
-  openCheckoutModal()
+  document.body.classList.remove('no-scroll')
+
+  // Small delay to let cart close before opening checkout
+  setTimeout(() => { openCheckoutModal() }, 150)
 }
 
 /* ─── OPEN CHECKOUT FROM MODAL BUY NOW ────────────────── */
@@ -54,8 +71,9 @@ function openCheckoutFromModal(e) {
 
   document.getElementById('modalOverlay')?.classList.remove('open')
   document.getElementById('productModal')?.classList.remove('open')
+  document.body.classList.remove('no-scroll')
 
-  openCheckoutModal()
+  setTimeout(() => { openCheckoutModal() }, 150)
 }
 
 /* ─── OPEN MODAL ──────────────────────────────────────── */
